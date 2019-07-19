@@ -17,6 +17,8 @@
 <meta name="twitter:description" content="天狗成长路上的点点滴滴……">
   
   
+    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
+  
   
       <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
   
@@ -25,13 +27,15 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
   
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
   <!-- 加载特效 -->
     <script src="/js/pace.js"></script>
     <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
   <script>
       var yiliaConfig = {
           rootUrl: '/',
-          fancybox: ,
+          fancybox: true,
           animate: true,
           isHome: false,
           isPost: false,
@@ -124,6 +128,11 @@
                             <div class="ribbon"></div>
                         </div>
                         
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
                         
                         <div class="icon-wrap icon-me hide" data-idx="3">
                             <div class="user"></div>
@@ -138,6 +147,8 @@
                         <li>菜单</li>
                         <li>标签</li>
                         
+                        <li>友情链接</li>
+                        
                         
                         <li>关于我</li>
                         
@@ -151,16 +162,14 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a  href="http://github.com/SkyDogMiao">github博客</a></li>
-                        
                             <li><a  href="/archives">文章归档</a></li>
-                        
-                            <li><a  href="https://www.luogu.org/space/show?uid=115936">洛谷</a></li>
                         
                         </ul>
                     </nav>
                     <nav class="header-nav">
                         <ul class="social">
+                            
+                                <a class="fl mail"  target="_blank" href="https://mail.qq.com/cgi-bin/frame_html?sid=-UIGWxSiX4u6Z18C&r=58bdedbb8f74e15a03f2ef406b792ae9" title="mail">mail</a>
                             
                                 <a class="fl github"  target="_blank" href="https://github.com/SkyDogMiao" title="github">github</a>
                             
@@ -175,11 +184,21 @@
                 </section>
                 
                 
-                
-                
                 <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://winjayran.github.io/">LYJ</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://presucc.github.io/">CR</a>
+                    
+                    </div>
+                </section>
                 
-                    <div id="js-aboutme">天狗，HM</div>
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我就是人格分裂的天狗，二狼四虎！</div>
                 </section>
                 
             </div>
@@ -210,17 +229,15 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="http://github.com/SkyDogMiao">github博客</a></li>
-                
                     <li><a href="/archives">文章归档</a></li>
-                
-                    <li><a href="https://www.luogu.org/space/show?uid=115936">洛谷</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
             </nav>
             <nav class="header-nav">
                 <div class="social">
+                    
+                        <a class="mail" target="_blank" href="https://mail.qq.com/cgi-bin/frame_html?sid=-UIGWxSiX4u6Z18C&r=58bdedbb8f74e15a03f2ef406b792ae9" title="mail">mail</a>
                     
                         <a class="github" target="_blank" href="https://github.com/SkyDogMiao" title="github">github</a>
                     
@@ -490,21 +507,5 @@
     </script>
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
