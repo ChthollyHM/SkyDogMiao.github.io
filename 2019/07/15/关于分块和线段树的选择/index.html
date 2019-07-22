@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="SkyDogMiao">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="关于分块和线段树的选择">
+  <meta property="og:description" content="天狗成长路上的点点滴滴……">
+  <meta property="og:site_name" content="天狗的博客">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://SkyDogMiao.github.io">
+  
+    <link rel="alternate" href="/atom.xml" title="天狗的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>天狗的博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">关于分块和线段树的选择</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By SkyDogMiao</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-07-15</span>
+            <span class="time">10:22:19</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/信息/">信息</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/做题经历——知识点感悟与归纳/">#做题经历——知识点感悟与归纳</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>今天我在家里忽然想要练练分块O(n*sqrt(n))，</p>
+<p>选择了《花神游历各国》这题来做：</p>
+<p>第一行一个整数n，代表数列中数的个数。</p>
+<p>第二行n个正整数，表示初始状态下数列中的数。</p>
+<p>第三行一个整数m，表示有m次操作。</p>
+<p>接下来m行每行三个整数k,l,r，</p>
+<a id="more"></a>
+<p>k=0表示给[l,r][l,r]中的每个数开平方(下取整)<br>k=1表示询问[l,r][l,r]中各个数的和。</p>
+<p>相信不用我怎么讲，这道题是一道很明显的序列区间操作的题目，这时候我想到了分块和线段树两个玩意，我决定都打一打。</p>
+<p>然后，，，然后我分块就打炸了：</p>
+<p>详情如下：</p>
+<h1 id><a href="#" class="headerlink" title></a><img src="https://cdn.luogu.org/upload/pic/63931.png" alt></h1><p>线段树却完美地A了：</p>
+<h1 id="-1"><a href="#-1" class="headerlink" title></a><img src="https://cdn.luogu.org/upload/pic/63932.png" alt></h1><p>于是我开始了深思：</p>
+<p>在敲分块的时候，我就已经遇到了很多瓶颈：比如如何储存状态，什么时候暴力处理，等等</p>
+<p>而线段树部分，我却轻松了很多，因为就是二分再上传就好了</p>
+<p>所以，我开始思考，分块储存状态真的比线段树简单吗？？</p>
+<p>还有分块时间复杂度也本身不如线段树，那为什么还要分块呢，只要学好线段树，其实就没问题了</p>
+<p>顺便分享一下我这道题的思路：</p>
+<p>我们就落实到每一个数直接开方，但是遇到整段最大值为1（或者说总和为该段总长度）的时候可以不理了，因为1开方还是1。</p>
+<p>那么思路就很明显了，上代码。</p>
+<p>线段树：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l,r;</span><br><span class="line">    LL Value,Maxn;</span><br><span class="line">    Node*lc,*rc;</span><br><span class="line">    Node()&#123;</span><br><span class="line">        Value=Maxn=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;*Root;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Max</span><span class="params">(<span class="keyword">const</span> LL&amp;x,<span class="keyword">const</span> LL&amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&gt;y?x:y; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Min</span><span class="params">(<span class="keyword">const</span> LL&amp;x,<span class="keyword">const</span> LL&amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&lt;y?x:y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Build</span><span class="params">(Node*now)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(now-&gt;l==now-&gt;r)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;now-&gt;Value);</span><br><span class="line">        now-&gt;Maxn=now-&gt;Value;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    now-&gt;lc=<span class="keyword">new</span> Node();now-&gt;rc=<span class="keyword">new</span> Node();</span><br><span class="line">    <span class="keyword">int</span> mid=now-&gt;l+now-&gt;r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    now-&gt;lc-&gt;l=now-&gt;l;now-&gt;rc-&gt;r=now-&gt;r;</span><br><span class="line">    now-&gt;rc-&gt;l=(now-&gt;lc-&gt;r=mid)+<span class="number">1</span>;</span><br><span class="line">    Build(now-&gt;lc);Build(now-&gt;rc);</span><br><span class="line">    now-&gt;Maxn=Max(now-&gt;lc-&gt;Maxn,now-&gt;rc-&gt;Maxn);</span><br><span class="line">    now-&gt;Value=now-&gt;lc-&gt;Value+now-&gt;rc-&gt;Value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Change</span><span class="params">(Node*now,<span class="keyword">const</span> <span class="keyword">int</span>&amp;x,<span class="keyword">const</span> <span class="keyword">int</span>&amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(now-&gt;l&gt;y||now-&gt;r&lt;x) <span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(now-&gt;l==now-&gt;r)&#123;</span><br><span class="line">        now-&gt;Value=now-&gt;Maxn=<span class="built_in">sqrt</span>(now-&gt;Value);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(now-&gt;lc-&gt;Maxn&gt;<span class="number">1</span>) Change(now-&gt;lc,x,y);</span><br><span class="line">    <span class="keyword">if</span>(now-&gt;rc-&gt;Maxn&gt;<span class="number">1</span>) Change(now-&gt;rc,x,y);</span><br><span class="line">    now-&gt;Maxn=Max(now-&gt;lc-&gt;Maxn,now-&gt;rc-&gt;Maxn);</span><br><span class="line">    now-&gt;Value=now-&gt;lc-&gt;Value+now-&gt;rc-&gt;Value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Get</span><span class="params">(Node*now,<span class="keyword">const</span> <span class="keyword">int</span>&amp;x,<span class="keyword">const</span> <span class="keyword">int</span>&amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(now-&gt;l&gt;y||now-&gt;r&lt;x) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(now-&gt;l&gt;=x&amp;&amp;now-&gt;r&lt;=y) <span class="keyword">return</span> now-&gt;Value;</span><br><span class="line">    <span class="keyword">return</span> Get(now-&gt;lc,x,y)+Get(now-&gt;rc,x,y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Input</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    Root=<span class="keyword">new</span> Node();</span><br><span class="line">    Root-&gt;l=<span class="number">1</span>;Root-&gt;r=n;</span><br><span class="line">    Build(Root);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);m;m--)&#123;</span><br><span class="line">        <span class="keyword">int</span> x,y,orz;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;orz,&amp;x,&amp;y);</span><br><span class="line">        <span class="keyword">if</span>(orz==<span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,Get(Root,Min(x,y),Max(x,y)));</span><br><span class="line">        <span class="keyword">else</span> Change(Root,Min(x,y),Max(x,y));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Input();Run();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分块：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">int</span> n,m,t;</span><br><span class="line"><span class="keyword">int</span> L[N],R[N],Pos[N];</span><br><span class="line">LL Sum[N],Num[N];</span><br><span class="line"><span class="keyword">bool</span> Tag[N];<span class="keyword">int</span> Size[N];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ch;LL f=<span class="number">1</span>,x;</span><br><span class="line">    <span class="keyword">while</span>((ch=getchar())&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>) <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f=<span class="number">-1</span>;x=ch^<span class="number">48</span>;</span><br><span class="line">    <span class="keyword">while</span>((ch=getchar())&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>) x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>);</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Swap</span><span class="params">(<span class="keyword">int</span>&amp;x,<span class="keyword">int</span>&amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp=x;x=y;y=tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Modify</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> l,<span class="keyword">const</span> <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p=Pos[l],q=Pos[r];</span><br><span class="line">    <span class="keyword">if</span>(p==q)&#123;</span><br><span class="line">        <span class="keyword">if</span>(Tag[p]) <span class="keyword">return</span> ;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=l;i&lt;=r;i++)&#123;</span><br><span class="line">            Sum[p]-=Num[i];</span><br><span class="line">            Num[i]=<span class="built_in">sqrt</span>(Num[i]);</span><br><span class="line">            Sum[p]+=Num[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(Sum[p]==Size[p]) Tag[p]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=p+<span class="number">1</span>;i&lt;=q<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Tag[i]) <span class="keyword">continue</span> ;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j=L[i];j&lt;=R[i];j++)&#123;</span><br><span class="line">                Sum[i]-=Num[j];</span><br><span class="line">                Num[j]=<span class="built_in">sqrt</span>(Num[j]);</span><br><span class="line">                Sum[i]+=Num[j];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(Sum[i]==Size[i]) Tag[i]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!Tag[p]) <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=l;i&lt;=R[p];i++)&#123;</span><br><span class="line">            Sum[p]-=Num[i];</span><br><span class="line">            Num[i]=<span class="built_in">sqrt</span>(Num[i]);</span><br><span class="line">            Sum[p]+=Num[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!Tag[q]) <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=L[q];i&lt;=r;i++)&#123;</span><br><span class="line">            Sum[q]-=Num[i];</span><br><span class="line">            Num[i]=<span class="built_in">sqrt</span>(Num[i]);</span><br><span class="line">            Sum[q]+=Num[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(Sum[p]==Size[p]) Tag[p]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(Sum[q]==Size[q]) Tag[q]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Query</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> l,<span class="keyword">const</span> <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p=Pos[l],q=Pos[r];LL ss=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(p==q) <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=l;i&lt;=r;i++) ss+=Num[i];</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=p+<span class="number">1</span>;i&lt;=q<span class="number">-1</span>;i++) ss+=Sum[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=l;i&lt;=R[p];i++) ss+=Num[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=L[q];i&lt;=r;i++) ss+=Num[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ss;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=Read();t=<span class="built_in">sqrt</span>(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=t;i++)&#123;</span><br><span class="line">        L[i]=(i<span class="number">-1</span>)*t+<span class="number">1</span>;</span><br><span class="line">        R[i]=i*t;</span><br><span class="line">        Size[i]=R[i]-L[i]+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(R[t]&lt;n)&#123;</span><br><span class="line">        R[++t]=n;</span><br><span class="line">        L[t]=R[t<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=t;j++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=L[j];i&lt;=R[j];i++)&#123;</span><br><span class="line">            Num[i]=Read();</span><br><span class="line">            Sum[j]+=Num[i];</span><br><span class="line">            Pos[i]=j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(m=Read();m;m--)&#123;</span><br><span class="line">        <span class="keyword">int</span> opt=Read(),x=Read(),y=Read();</span><br><span class="line">        <span class="keyword">if</span>(x&gt;y) Swap(x,y);</span><br><span class="line">        <span class="keyword">if</span>(opt==<span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,Query(x,y));</span><br><span class="line">        <span class="keyword">else</span> Modify(x,y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Init();</span><br><span class="line">    Work();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>有什么别的想法的人希望提出，相互学习！</p>
+<p>最后表明一下我的观点：目前分块没什么用，线段树够了。</p>
+<p>有不同的观点的可以说一下分块一些具体实际应用，而线段树不可以的，毕竟其实我对分块也不是很了解。</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
+
