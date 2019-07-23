@@ -116,7 +116,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-15</span>
-            <span class="time">10:52:34</span>
+            <span class="time">11:00:23</span>
           </span>
           
           <!--  Categories  -->
@@ -148,9 +148,9 @@
 <p>k=0表示给[l,r]中的每个数开平方(下取整)<br>k=1表示询问[l,r]中各个数的和。</p>
 <p>相信不用我怎么讲，这道题是一道很明显的序列区间操作的题目，这时候我想到了分块和线段树两个玩意，我决定都打一打。</p>
 <p>然后，，，然后我分块就打炸了：</p>
-<p>详情如下：<br><img src="/img/花神游历各国——分块T.png" alt="分块垃圾！"></p>
+<p>详情如下：<br><img src="/public/img/花神游历各国——分块T.png" alt="分块垃圾！"></p>
 <p>线段树却完美地A了：</p>
-<p><img src="/img/花神游历各国——线段树AC.pngs" alt="线段树牛逼！"></p>
+<p><img src="/public/img/花神游历各国——线段树AC.pngs" alt="线段树牛逼！"></p>
 <p>于是我开始了深思：</p>
 <p>在敲分块的时候，我就已经遇到了很多瓶颈：比如如何储存状态，什么时候暴力处理，等等</p>
 <p>而线段树部分，我却轻松了很多，因为就是二分再上传就好了</p>
@@ -202,22 +202,6 @@
   });
 </script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>
 
