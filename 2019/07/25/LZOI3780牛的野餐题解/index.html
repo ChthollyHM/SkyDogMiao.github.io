@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="SkyDogMiao">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="牛的野餐题解">
+  <meta property="og:description" content="天狗成长路上的点点滴滴……">
+  <meta property="og:site_name" content="天狗的博客">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://SkyDogMiao.github.io">
+  
+    <link rel="alternate" href="/atom.xml" title="天狗的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+
+  <!-- Site Title -->
+  <title>天狗的博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/Head.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">牛的野餐题解</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/SkyDogMiao">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:953438143@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://winjayran.github.io">
+                  
+                  友链LYJ
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://presucc.github.io">
+                  
+                  友链CR
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By SkyDogMiao</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-07-25</span>
+            <span class="time">10:19:59</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/信息/">信息</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/做题经历——知识点感悟与归纳/">#做题经历——知识点感悟与归纳</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>3780: 牛的野餐Cow Picnic<br>时间限制: 1 Sec  内存限制: 128 MB<br>提交: 54  解决: 21<br>[提交][状态][题解]<br>题目描述<br>K(1≤K≤100)只奶牛分散在N(1≤N≤1000)个牧场．现在她们要集中起来进餐．牧场之间有M(1≤M≤10000)条有向路连接，而且不存在起点和终点相同的有向路．她们进餐的地点必须是所有奶牛都可到达的地方．那么，有多少这样的牧场呢？<br>输入<br>第1行：3个整数，K，N，M</p>
+<p>第2行..K+1行：1个整数（取值1..N），表示第i个奶牛所在的牧场编号</p>
+<p>第K+2行..M+K+1行：每行两个整数，A和B（取值都是1..N，A！=B），表示牧场A到牧场B有一条有向边相连</p>
+<p>输出<br>1行：1个整数，表示有多少个牧场符合所有奶牛可达<br>样例输入<br>2 4 4<br>2<br>3<br>1 2<br>1 4<br>2 3<br>3 4<br>样例输出<br>2<br>提示<br>奶牛可达牧场3或者牧场4</p>
+<h2 id="同样的，我们先来理解一下题意："><a href="#同样的，我们先来理解一下题意：" class="headerlink" title="同样的，我们先来理解一下题意："></a>同样的，我们先来理解一下题意：</h2><h3 id="其实告诉你一个n个点m条边的有向图，然后在这个有向图中有k个特殊点-可能有两个或以上的特殊点是同一个-，问在n个点中有多少个点是k个特殊点都能到达的"><a href="#其实告诉你一个n个点m条边的有向图，然后在这个有向图中有k个特殊点-可能有两个或以上的特殊点是同一个-，问在n个点中有多少个点是k个特殊点都能到达的" class="headerlink" title="其实告诉你一个n个点m条边的有向图，然后在这个有向图中有k个特殊点(可能有两个或以上的特殊点是同一个)，问在n个点中有多少个点是k个特殊点都能到达的"></a>其实告诉你一个n个点m条边的有向图，然后在这个有向图中有k个特殊点(可能有两个或以上的特殊点是同一个)，问在n个点中有多少个点是k个特殊点都能到达的</h3><h3 id="这就是一道图论求有向图连通性的模板裸题嘛。"><a href="#这就是一道图论求有向图连通性的模板裸题嘛。" class="headerlink" title="这就是一道图论求有向图连通性的模板裸题嘛。"></a>这就是一道图论求有向图连通性的模板裸题嘛。</h3><h3 id="可能有的小盆友要问了，什么叫求有向图连通性呢？求有向图连通性就是说在一个有向图中给一个数对-x-y-，问x经过一些边后能否跑到y。"><a href="#可能有的小盆友要问了，什么叫求有向图连通性呢？求有向图连通性就是说在一个有向图中给一个数对-x-y-，问x经过一些边后能否跑到y。" class="headerlink" title="可能有的小盆友要问了，什么叫求有向图连通性呢？求有向图连通性就是说在一个有向图中给一个数对(x,y)，问x经过一些边后能否跑到y。"></a>可能有的小盆友要问了，什么叫求有向图连通性呢？求有向图连通性就是说在一个有向图中给一个数对(x,y)，问x经过一些边后能否跑到y。</h3><h3 id="那么有向图连通性怎么求呢？我将在下面给大家介绍两种常用的求有向图连通性的算法-但是只有一个可以解决这道题"><a href="#那么有向图连通性怎么求呢？我将在下面给大家介绍两种常用的求有向图连通性的算法-但是只有一个可以解决这道题" class="headerlink" title="那么有向图连通性怎么求呢？我将在下面给大家介绍两种常用的求有向图连通性的算法(但是只有一个可以解决这道题)"></a>那么有向图连通性怎么求呢？我将在下面给大家介绍两种常用的求有向图连通性的算法(但是只有一个可以解决这道题)</h3><h1 id="1-Floyd"><a href="#1-Floyd" class="headerlink" title="1.Floyd"></a>1.Floyd</h1><h3 id="有的小盆友学过最短路的可能知道Floyd这个算法，不过就算没学过也没关系，我会给大家详细介绍。"><a href="#有的小盆友学过最短路的可能知道Floyd这个算法，不过就算没学过也没关系，我会给大家详细介绍。" class="headerlink" title="有的小盆友学过最短路的可能知道Floyd这个算法，不过就算没学过也没关系，我会给大家详细介绍。"></a>有的小盆友学过最短路的可能知道Floyd这个算法，不过就算没学过也没关系，我会给大家详细介绍。</h3><h3 id="Floyd其实是一个神奇的最短路算法，而且可以处理多源，它可以做到O-n-3-预处理出所有-x-y-的最短距离，之后询问直接O-1-就好了"><a href="#Floyd其实是一个神奇的最短路算法，而且可以处理多源，它可以做到O-n-3-预处理出所有-x-y-的最短距离，之后询问直接O-1-就好了" class="headerlink" title="Floyd其实是一个神奇的最短路算法，而且可以处理多源，它可以做到O(n^3)预处理出所有(x,y)的最短距离，之后询问直接O(1)就好了"></a>Floyd其实是一个神奇的最短路算法，而且可以处理多源，它可以做到O(n^3)预处理出所有(x,y)的最短距离，之后询问直接O(1)就好了</h3><h3 id="那么Floyd是怎么实现的呢？"><a href="#那么Floyd是怎么实现的呢？" class="headerlink" title="那么Floyd是怎么实现的呢？"></a>那么Floyd是怎么实现的呢？</h3><h2 id="Floyd的思想基于-动态规划"><a href="#Floyd的思想基于-动态规划" class="headerlink" title="Floyd的思想基于     动态规划"></a>Floyd的思想基于     动态规划</h2><h3 id="Floyd的基础想法是这样的：我们设Dist-k-i-j-表示i经过一系列结点编号不超过k的点到达j的最短距离"><a href="#Floyd的基础想法是这样的：我们设Dist-k-i-j-表示i经过一系列结点编号不超过k的点到达j的最短距离" class="headerlink" title="Floyd的基础想法是这样的：我们设Dist[k][i][j]表示i经过一系列结点编号不超过k的点到达j的最短距离"></a>Floyd的基础想法是这样的：我们设Dist[k][i][j]表示i经过一系列结点编号不超过k的点到达j的最短距离</h3><h3 id="那么这个状态该怎么转移呢？？"><a href="#那么这个状态该怎么转移呢？？" class="headerlink" title="那么这个状态该怎么转移呢？？"></a>那么这个状态该怎么转移呢？？</h3><h3 id="我们可以这样想，从i走到j，需要先从i走到k，再从k走到j，这一点很好理解"><a href="#我们可以这样想，从i走到j，需要先从i走到k，再从k走到j，这一点很好理解" class="headerlink" title="我们可以这样想，从i走到j，需要先从i走到k，再从k走到j，这一点很好理解"></a>我们可以这样想，从i走到j，需要先从i走到k，再从k走到j，这一点很好理解</h3><h2 id="那么再抽象一点，从i经过一系列结点编号不超过k的点到达j，实际上就是先从i经过一系列结点编号不超过k-1的点到达k，再从k经过一系列结点编号不超过k-1的到达j"><a href="#那么再抽象一点，从i经过一系列结点编号不超过k的点到达j，实际上就是先从i经过一系列结点编号不超过k-1的点到达k，再从k经过一系列结点编号不超过k-1的到达j" class="headerlink" title="那么再抽象一点，从i经过一系列结点编号不超过k的点到达j，实际上就是先从i经过一系列结点编号不超过k-1的点到达k，再从k经过一系列结点编号不超过k-1的到达j"></a>那么再抽象一点，从i经过一系列结点编号不超过k的点到达j，实际上就是先从i经过一系列结点编号不超过k-1的点到达k，再从k经过一系列结点编号不超过k-1的到达j</h2><h3 id="所以状态转移方程就很明显了"><a href="#所以状态转移方程就很明显了" class="headerlink" title="所以状态转移方程就很明显了"></a>所以状态转移方程就很明显了</h3><h3 id="我们把上面的式子写下来："><a href="#我们把上面的式子写下来：" class="headerlink" title="我们把上面的式子写下来："></a>我们把上面的式子写下来：</h3><h3 id="从i经过一系列结点编号不超过k的点到达j：Dist-k-i-j"><a href="#从i经过一系列结点编号不超过k的点到达j：Dist-k-i-j" class="headerlink" title="从i经过一系列结点编号不超过k的点到达j：Dist[k][i][j]"></a>从i经过一系列结点编号不超过k的点到达j：Dist[k][i][j]</h3><h3 id="从i经过一系列结点编号不超过k-1的点到达k：Dist-k-1-i-k"><a href="#从i经过一系列结点编号不超过k-1的点到达k：Dist-k-1-i-k" class="headerlink" title="从i经过一系列结点编号不超过k-1的点到达k：Dist[k-1][i][k]"></a>从i经过一系列结点编号不超过k-1的点到达k：Dist[k-1][i][k]</h3><h3 id="从k经过一系列结点编号不超过k-1的点到达j：Dist-k-1-k-j"><a href="#从k经过一系列结点编号不超过k-1的点到达j：Dist-k-1-k-j" class="headerlink" title="从k经过一系列结点编号不超过k-1的点到达j：Dist[k-1][k][j]"></a>从k经过一系列结点编号不超过k-1的点到达j：Dist[k-1][k][j]</h3><h2 id="那么实际上就是距离加起来就好了"><a href="#那么实际上就是距离加起来就好了" class="headerlink" title="那么实际上就是距离加起来就好了"></a>那么实际上就是距离加起来就好了</h2><h2 id="即Dist-k-i-j-min-Dist-k-i-j-Dist-k-1-i-k-Dist-k-1-k-j"><a href="#即Dist-k-i-j-min-Dist-k-i-j-Dist-k-1-i-k-Dist-k-1-k-j" class="headerlink" title="即Dist[k][i][j]=min(Dist[k][i][j],Dist[k-1][i][k],Dist[k-1][k][j]);"></a>即Dist[k][i][j]=min(Dist[k][i][j],Dist[k-1][i][k],Dist[k-1][k][j]);</h2><h2 id="那么1到n的距离就是Dist-n-1-n"><a href="#那么1到n的距离就是Dist-n-1-n" class="headerlink" title="那么1到n的距离就是Dist[n][1][n]"></a>那么1到n的距离就是Dist[n][1][n]</h2><h3 id="给个伪代码："><a href="#给个伪代码：" class="headerlink" title="给个伪代码："></a>给个伪代码：</h3><p>for k 1 to n //一定要先枚举k，因为用k要先有k-1<br>    for i 1 to n<br>        for j 1 to n<br>            Dist[k][i][j]=Min(Dist[k][i][j],Dist[k-1][i][k]+Dist[k-1][k][j]);</p>
+<h3 id="然而我们发现Dist-k-所需的只有Dist-k-1-，而且不会影响到。"><a href="#然而我们发现Dist-k-所需的只有Dist-k-1-，而且不会影响到。" class="headerlink" title="然而我们发现Dist[k][][]所需的只有Dist[k-1][][]，而且不会影响到。"></a>然而我们发现Dist[k][][]所需的只有Dist[k-1][][]，而且不会影响到。</h3><h3 id="而且三维的话空间复杂度O-n-3-，可能不会爆，但也会特别不爽对吧。但因为满足上一行的条件，所以我们不妨去掉第一维，这样的话空间复杂度就降到了O-n-2"><a href="#而且三维的话空间复杂度O-n-3-，可能不会爆，但也会特别不爽对吧。但因为满足上一行的条件，所以我们不妨去掉第一维，这样的话空间复杂度就降到了O-n-2" class="headerlink" title="而且三维的话空间复杂度O(n^3)，可能不会爆，但也会特别不爽对吧。但因为满足上一行的条件，所以我们不妨去掉第一维，这样的话空间复杂度就降到了O(n^2)"></a>而且三维的话空间复杂度O(<script type="math/tex">n^3</script>)，可能不会爆，但也会特别不爽对吧。但因为满足上一行的条件，所以我们不妨去掉第一维，这样的话空间复杂度就降到了O(<script type="math/tex">n^2</script>)</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
+
