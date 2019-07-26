@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="SkyDogMiao">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="平分题解">
+  <meta property="og:description" content="天狗成长路上的点点滴滴……">
+  <meta property="og:site_name" content="天狗的博客">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://SkyDogMiao.github.io">
+  
+    <link rel="alternate" href="/atom.xml" title="天狗的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+
+  <!-- Site Title -->
+  <title>天狗的博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/Head.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">平分题解</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/SkyDogMiao">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:953438143@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://winjayran.github.io">
+                  
+                  友链LYJ
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://presucc.github.io">
+                  
+                  友链CR
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By SkyDogMiao</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-07-26</span>
+            <span class="time">09:35:09</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/信息/">信息</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/做题经历/">#做题经历</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>2326: 平分</p>
+<a id="more"></a>
+<p>时间限制: 1 Sec  内存限制: 128 MB<br>提交: 62  解决: 15<br>[提交][状态][题解]<br>题目描述</p>
+<p>Bill收集了一些价值分为6个等级的矿石，现在他希望把这些矿石按价值平分成两堆，但是他不知道是否能实现，于是请你帮忙判断是否可行。<br>输入</p>
+<p>第一行一个整数T（T&lt;=10），为测试数据组数。</p>
+<p>下面T行，每行6个数字(int范围)，表示价值等级从1~6的矿石数目。</p>
+<p>输出</p>
+<p>T行，如果能够平分成两份则该行输出“YES”，否则输出“NO”。<br>样例输入</p>
+<p>2<br>1 0 1 2 0 0<br>1 0 0 0 1 1</p>
+<p>样例输出</p>
+<p>NO<br>YES</p>
+<h3 id="同样的，我们还是先理解一下题意："><a href="#同样的，我们还是先理解一下题意：" class="headerlink" title="同样的，我们还是先理解一下题意："></a>同样的，我们还是先理解一下题意：</h3><h3 id="其实很简单，就是能不能把一坨1-2-3，4-5-6平均分成两份，使两份和一样"><a href="#其实很简单，就是能不能把一坨1-2-3，4-5-6平均分成两份，使两份和一样" class="headerlink" title="其实很简单，就是能不能把一坨1,2,3，4,5,6平均分成两份，使两份和一样"></a>其实很简单，就是能不能把一坨1,2,3，4,5,6平均分成两份，使两份和一样</h3><h3 id="那么再转换一下，假设所以1-2-3-4-5-6的和为2-ss-那么就相当于要刚好凑一个ss"><a href="#那么再转换一下，假设所以1-2-3-4-5-6的和为2-ss-那么就相当于要刚好凑一个ss" class="headerlink" title="那么再转换一下，假设所以1,2,3,4,5,6的和为2*ss  那么就相当于要刚好凑一个ss"></a>那么再转换一下，假设所以1,2,3,4,5,6的和为2*ss  那么就相当于要刚好凑一个ss</h3><h3 id="一种最简单情况就是所有的和不是2的倍数，那显然是不可以的"><a href="#一种最简单情况就是所有的和不是2的倍数，那显然是不可以的" class="headerlink" title="一种最简单情况就是所有的和不是2的倍数，那显然是不可以的"></a>一种最简单情况就是所有的和不是2的倍数，那显然是不可以的</h3><h3 id="然后我们进入正题：判断能否凑ss"><a href="#然后我们进入正题：判断能否凑ss" class="headerlink" title="然后我们进入正题：判断能否凑ss"></a>然后我们进入正题：判断能否凑ss</h3><h3 id="我们考虑从大数值往小数值来凑"><a href="#我们考虑从大数值往小数值来凑" class="headerlink" title="我们考虑从大数值往小数值来凑"></a>我们考虑从大数值往小数值来凑</h3><h3 id="什么意思呢？？比如说ss，我们先拿6去凑，结果发现ss-6k-b，那么再把b用5凑，以此类推"><a href="#什么意思呢？？比如说ss，我们先拿6去凑，结果发现ss-6k-b，那么再把b用5凑，以此类推" class="headerlink" title="什么意思呢？？比如说ss，我们先拿6去凑，结果发现ss=6k+b，那么再把b用5凑，以此类推"></a>什么意思呢？？比如说ss，我们先拿6去凑，结果发现ss=<script type="math/tex">6k+b</script>，那么再把b用5凑，以此类推</h3><h3 id="这个正确性是可以证明的。因为假设有6不够凑，那么可以用3或2或1，而且1-2-3-4-5-6数值差只有1，所以精度肯定没有问题"><a href="#这个正确性是可以证明的。因为假设有6不够凑，那么可以用3或2或1，而且1-2-3-4-5-6数值差只有1，所以精度肯定没有问题" class="headerlink" title="这个正确性是可以证明的。因为假设有6不够凑，那么可以用3或2或1，而且1,2,3,4,5,6数值差只有1，所以精度肯定没有问题"></a>这个正确性是可以证明的。因为假设有6不够凑，那么可以用3或2或1，而且1,2,3,4,5,6数值差只有1，所以精度肯定没有问题</h3><h3 id="那就是一道贪心了嘛。能用大的就用大的"><a href="#那就是一道贪心了嘛。能用大的就用大的" class="headerlink" title="那就是一道贪心了嘛。能用大的就用大的"></a>那就是一道贪心了嘛。能用大的就用大的</h3><h3 id="上代码："><a href="#上代码：" class="headerlink" title="上代码："></a>上代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">typedef long long LL;</span><br><span class="line">const int N=15;</span><br><span class="line">int Num[N],T;</span><br><span class="line">LL ss;</span><br><span class="line">inline int Read()&#123;</span><br><span class="line">    char ch;int f=1,x;</span><br><span class="line">    while((ch=getchar())&lt;&apos;0&apos;||ch&gt;&apos;9&apos;) if(ch==&apos;-&apos;) f=-1;x=ch^48;</span><br><span class="line">    while((ch=getchar())&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;) x=(x&lt;&lt;3)+(x&lt;&lt;1)+(ch^48);</span><br><span class="line">    return x*f;</span><br><span class="line">&#125;</span><br><span class="line">inline void Query()&#123;</span><br><span class="line">    ss=0;</span><br><span class="line">    for(register int i=1;i&lt;=6;i++)&#123;</span><br><span class="line">        Num[i]=Read();</span><br><span class="line">        ss+=Num[i]*i;                 //求总值 </span><br><span class="line">    &#125;</span><br><span class="line">    if(ss&amp;1) return puts(&quot;NO&quot;),void();    //从总值上看都不能平分了 </span><br><span class="line">    ss&gt;&gt;=1;                       //要凑的值 </span><br><span class="line">    for(register int i=6;i;i--)&#123;        //贪心，从大往小取 </span><br><span class="line">        if(ss&gt;=i*Num[i]) ss-=i*Num[i];   //i不够用，那也全部用掉 </span><br><span class="line">        else ss-=ss/i*i;               //i用不完那就能用多少用多少 </span><br><span class="line">        if(!ss) return puts(&quot;YES&quot;),void();</span><br><span class="line">    &#125;</span><br><span class="line">    puts(&quot;NO&quot;);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    for(T=Read();T;T--)</span><br><span class="line">        Query();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>谢谢观看！！</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
+
