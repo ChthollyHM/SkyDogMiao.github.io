@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="SkyDogMiao">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="保护花朵题解">
+  <meta property="og:description" content="天狗成长路上的点点滴滴……">
+  <meta property="og:site_name" content="天狗的博客">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://SkyDogMiao.github.io">
+  
+    <link rel="alternate" href="/atom.xml" title="天狗的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+
+  <!-- Site Title -->
+  <title>天狗的博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/Head.png)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">保护花朵题解</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/SkyDogMiao">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:953438143@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://winjayran.github.io">
+                  
+                  友链LYJ
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://presucc.github.io">
+                  
+                  友链CR
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By SkyDogMiao</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-07-26</span>
+            <span class="time">08:47:22</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/信息/">信息</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/做题经历/">#做题经历</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>3771: 保护花朵Protecting the Flowers<br>时间限制: 1 Sec  内存限制: 128 MB<br>提交: 84  解决: 33<br>[提交][状态][题解]<br>题目描述<br>有N (2 ≤ N ≤ 100,000) 头奶牛跑到FJ的花园里去吃花儿了，它们分别在距离牛圈T(1 ≤ Ti ≤ 2,000,000)分钟处吃花儿，每分钟会吃掉D (1 ≤ Di ≤ 100) 朵卡哇伊的花儿，（此处有点拗口，不要在意细节啊！），FJ现在要将它们给弄回牛圈，但是他每次只能弄一头回去，来回用时总共为2*T分钟，在这段时间内，其它的奶牛会继续吃FJ卡哇伊的花儿，速度保持不变，当然正在被赶回牛圈的奶牛就没口福了！现在要求以一种最棒的方法来尽可能的减少花儿的损失数量，求奶牛吃掉花儿的最少朵数！<br>输入<br>第1行:整数N</p>
+<p>第2行..N+1行：两个整数，Ti和Di</p>
+<p>输出<br>1行：奶牛吃掉花儿的最少朵数<br>样例输入<br>6<br>3 1<br>2 5<br>2 3<br>3 2<br>4 1<br>1 6<br>样例输出<br>86<br>提示</p>
+<p>赶牛顺序：6, 2, 3, 4, 1, 5. </p>
+<p>损失花朵：24 + 28 + 16 + 12 + 6 = 86.</p>
+<h2 id="emmm我们先来理解一下题意"><a href="#emmm我们先来理解一下题意" class="headerlink" title="emmm我们先来理解一下题意"></a>emmm我们先来理解一下题意</h2><h3 id="就是说呢，在很多地方有牛吃花，速度不一，到FJ的花园距离不一，FJ的任务是把牛全部赶走，问最少损失多少。"><a href="#就是说呢，在很多地方有牛吃花，速度不一，到FJ的花园距离不一，FJ的任务是把牛全部赶走，问最少损失多少。" class="headerlink" title="就是说呢，在很多地方有牛吃花，速度不一，到FJ的花园距离不一，FJ的任务是把牛全部赶走，问最少损失多少。"></a>就是说呢，在很多地方有牛吃花，速度不一，到FJ的花园距离不一，FJ的任务是把牛全部赶走，问最少损失多少。</h3><h1 id="那么这道题的难点就是确定赶牛顺序。"><a href="#那么这道题的难点就是确定赶牛顺序。" class="headerlink" title="那么这道题的难点就是确定赶牛顺序。"></a>那么这道题的难点就是确定赶牛顺序。</h1><h3 id="我们看看题目问的是什么：吃掉的最少朵数。"><a href="#我们看看题目问的是什么：吃掉的最少朵数。" class="headerlink" title="我们看看题目问的是什么：吃掉的最少朵数。"></a>我们看看题目问的是什么：吃掉的最少朵数。</h3><h2 id="那么根据HYX定理，我们可以确定肯定是DP、贪心或二分"><a href="#那么根据HYX定理，我们可以确定肯定是DP、贪心或二分" class="headerlink" title="那么根据HYX定理，我们可以确定肯定是DP、贪心或二分"></a>那么根据HYX定理，我们可以确定肯定是DP、贪心或二分</h2><h2 id="那二分分个-哟，有什么好分的？？你如果真要二分，唯一可以二分的就是答案，那判断能否让朵数少于-Mid-咋整？最终还是要求最少朵数，二分跟没分有何区别。。。二分，我要你有何用？？果断放弃"><a href="#那二分分个-哟，有什么好分的？？你如果真要二分，唯一可以二分的就是答案，那判断能否让朵数少于-Mid-咋整？最终还是要求最少朵数，二分跟没分有何区别。。。二分，我要你有何用？？果断放弃" class="headerlink" title="那二分分个**哟，有什么好分的？？你如果真要二分，唯一可以二分的就是答案，那判断能否让朵数少于$Mid$咋整？最终还是要求最少朵数，二分跟没分有何区别。。。二分，我要你有何用？？果断放弃"></a>那二分分个**哟，有什么好分的？？你如果真要二分，唯一可以二分的就是答案，那判断能否让朵数少于$Mid$咋整？最终还是要求最少朵数，二分跟没分有何区别。。。二分，我要你有何用？？果断放弃</h2><h2 id="我们再来想想DP，因为-n-到了-10-5-级别，所以肯定只能一维，只能设-f-i-表示前i头牛的最少损失。"><a href="#我们再来想想DP，因为-n-到了-10-5-级别，所以肯定只能一维，只能设-f-i-表示前i头牛的最少损失。" class="headerlink" title="我们再来想想DP，因为$n$到了$10^5$级别，所以肯定只能一维，只能设$f[i]$表示前i头牛的最少损失。"></a>我们再来想想DP，因为$n$到了$10^5$级别，所以肯定只能一维，只能设$f[i]$表示前i头牛的最少损失。</h2><h1 id="状态转移方程？"><a href="#状态转移方程？" class="headerlink" title="状态转移方程？"></a>状态转移方程？</h1><h2 id="反正我是想不到，放弃"><a href="#反正我是想不到，放弃" class="headerlink" title="反正我是想不到，放弃"></a>反正我是想不到，放弃</h2><h1 id="所以我们只能尝试贪心了。"><a href="#所以我们只能尝试贪心了。" class="headerlink" title="所以我们只能尝试贪心了。"></a>所以我们只能尝试贪心了。</h1><h2 id="看数据范围-n≤10-5-，所以马上确定算法应该是-O-n-log-n-的。而这里贪心的话只能是先排序然后直接-O-n-或-O-n-log-n-求解"><a href="#看数据范围-n≤10-5-，所以马上确定算法应该是-O-n-log-n-的。而这里贪心的话只能是先排序然后直接-O-n-或-O-n-log-n-求解" class="headerlink" title="看数据范围$n≤10^5$，所以马上确定算法应该是$O(n log n)$的。而这里贪心的话只能是先排序然后直接$O(n)$或$O(n log n)$求解"></a>看数据范围$n≤10^5$，所以马上确定算法应该是$O(n log n)$的。而这里贪心的话只能是先排序然后直接$O(n)$或$O(n log n)$求解</h2><h1 id="如何排序？？"><a href="#如何排序？？" class="headerlink" title="如何排序？？"></a>如何排序？？</h1><h2 id="排序的话无非就是确定sort的比对函数Cmp怎么打"><a href="#排序的话无非就是确定sort的比对函数Cmp怎么打" class="headerlink" title="排序的话无非就是确定sort的比对函数Cmp怎么打"></a>排序的话无非就是确定sort的比对函数Cmp怎么打</h2><h2 id="假设第-i-头牛离花园距离-T-分钟，每分钟吃掉-D-朵花-emmm这就是题目中的定义啊"><a href="#假设第-i-头牛离花园距离-T-分钟，每分钟吃掉-D-朵花-emmm这就是题目中的定义啊" class="headerlink" title="假设第$i$头牛离花园距离$T$分钟，每分钟吃掉$D$朵花(emmm这就是题目中的定义啊)"></a>假设第$i$头牛离花园距离$T$分钟，每分钟吃掉$D$朵花(emmm这就是题目中的定义啊)</h2><h2 id="那么我们考虑两头牛-x-和-y-的先后顺序："><a href="#那么我们考虑两头牛-x-和-y-的先后顺序：" class="headerlink" title="那么我们考虑两头牛$x$和$y$的先后顺序："></a>那么我们考虑两头牛$x$和$y$的先后顺序：</h2><h2 id="假设我们先赶走牛-x-再赶走牛-y-，那么我们的损失应该是："><a href="#假设我们先赶走牛-x-再赶走牛-y-，那么我们的损失应该是：" class="headerlink" title="假设我们先赶走牛$x$再赶走牛$y$，那么我们的损失应该是："></a>假设我们先赶走牛$x$再赶走牛$y$，那么我们的损失应该是：</h2><h2 id="sum-i-包括y的未被赶走的牛-2D-i-T-x"><a href="#sum-i-包括y的未被赶走的牛-2D-i-T-x" class="headerlink" title="$\sum_{i 包括y的未被赶走的牛}(2D[i]T[x])$"></a>$\sum_{i 包括y的未被赶走的牛}(2<em>D[i]</em>T[x])$</h2><h2 id="而如果先赶走牛-y-再赶走牛-x-的话，我们的损失类似的应该是："><a href="#而如果先赶走牛-y-再赶走牛-x-的话，我们的损失类似的应该是：" class="headerlink" title="而如果先赶走牛$y$再赶走牛$x$的话，我们的损失类似的应该是："></a>而如果先赶走牛$y$再赶走牛$x$的话，我们的损失类似的应该是：</h2><h2 id="sum-i-包括x的未被赶走的牛-2D-i-T-y"><a href="#sum-i-包括x的未被赶走的牛-2D-i-T-y" class="headerlink" title="$\sum_{i 包括x的未被赶走的牛}(2D[i]T[y]))$"></a>$\sum_{i 包括x的未被赶走的牛}(2<em>D[i]</em>T[y]))$</h2><h2 id="按照Cmp的规律，先选-x-的损失应比-y-要小，即："><a href="#按照Cmp的规律，先选-x-的损失应比-y-要小，即：" class="headerlink" title="按照Cmp的规律，先选$x$的损失应比$y$要小，即："></a>按照Cmp的规律，先选$x$的损失应比$y$要小，即：</h2><h2 id="sum-i-包括y的未被赶走的牛-2D-i-T-x-lt-sum-i-包括x的未被赶走的牛-2D-i-T-y"><a href="#sum-i-包括y的未被赶走的牛-2D-i-T-x-lt-sum-i-包括x的未被赶走的牛-2D-i-T-y" class="headerlink" title="$\sum_{i 包括y的未被赶走的牛}(2D[i]T[x])$ &lt; $\sum_{i 包括x的未被赶走的牛}(2D[i]T[y])"></a>$\sum_{i 包括y的未被赶走的牛}(2<em>D[i]</em>T[x])$ &lt; $\sum_{i 包括x的未被赶走的牛}(2<em>D[i]</em>T[y])</h2><h2 id="将左边的-y-和右边的-x-分别单独提出来，顺便把T-x-和T-y-提出来"><a href="#将左边的-y-和右边的-x-分别单独提出来，顺便把T-x-和T-y-提出来" class="headerlink" title="将左边的$y$和右边的$x$分别单独提出来，顺便把T[x]和T[y]提出来"></a>将左边的$y$和右边的$x$分别单独提出来，顺便把T[x]和T[y]提出来</h2><h2 id="2D-y-T-x-sum-i-未被赶走的牛-2D-i-T-x-lt-2D-x-T-y-sum-i-未被赶走的牛-2D-i-T-y"><a href="#2D-y-T-x-sum-i-未被赶走的牛-2D-i-T-x-lt-2D-x-T-y-sum-i-未被赶走的牛-2D-i-T-y" class="headerlink" title="$2D[y]T[x]+\sum_{i 未被赶走的牛}(2D[i])T[x]$ &lt; $2D[x]T[y]+\sum_{i 未被赶走的牛}(2D[i])T[y]$"></a>$2<em>D[y]</em>T[x]+\sum_{i 未被赶走的牛}(2<em>D[i])</em>T[x]$ &lt; $2<em>D[x]</em>T[y]+\sum_{i 未被赶走的牛}(2<em>D[i])</em>T[y]$</h2><h2 id="同时除以2"><a href="#同时除以2" class="headerlink" title="同时除以2"></a>同时除以2</h2><h2 id="D-y-T-x-sum-i-未被赶走的牛-D-i-T-x-lt-D-x-T-y-sum-i-未被赶走的牛-D-i-T-y"><a href="#D-y-T-x-sum-i-未被赶走的牛-D-i-T-x-lt-D-x-T-y-sum-i-未被赶走的牛-D-i-T-y" class="headerlink" title="$D[y]T[x]+\sum_{i 未被赶走的牛}D[i]T[x]$ &lt; $D[x]T[y]+\sum_{i 未被赶走的牛}D[i]T[y]$"></a>$D[y]<em>T[x]+\sum_{i 未被赶走的牛}D[i]</em>T[x]$ &lt; $D[x]<em>T[y]+\sum_{i 未被赶走的牛}D[i]</em>T[y]$</h2><h2 id="设-sum-i-未被赶走的牛-D-i-ss"><a href="#设-sum-i-未被赶走的牛-D-i-ss" class="headerlink" title="设$\sum_{i 未被赶走的牛}D[i]=ss$"></a>设$\sum_{i 未被赶走的牛}D[i]=ss$</h2><h2 id="那么原式变成：-D-y-T-x-ssT-x-lt-D-x-T-y-ssT-y"><a href="#那么原式变成：-D-y-T-x-ssT-x-lt-D-x-T-y-ssT-y" class="headerlink" title="那么原式变成： $D[y]T[x]+ssT[x]$ &lt; $D[x]T[y]+ssT[y]"></a>那么原式变成： $D[y]<em>T[x]+ss</em>T[x]$ &lt; $D[x]<em>T[y]+ss</em>T[y]</h2><h2 id="然后可以直接将-ss-T-这一项去掉"><a href="#然后可以直接将-ss-T-这一项去掉" class="headerlink" title="然后可以直接将$ss*T$这一项去掉"></a>然后可以直接将$ss*T$这一项去掉</h2><h2 id="那么：-D-y-T-x-lt-D-x-T-y"><a href="#那么：-D-y-T-x-lt-D-x-T-y" class="headerlink" title="那么：$D[y]T[x]$ &lt; $D[x]T[y]$"></a>那么：$D[y]<em>T[x]$ &lt; $D[x]</em>T[y]$</h2><h2 id="那就完了呀，直接按照这个排序，然后慢慢求解即可"><a href="#那就完了呀，直接按照这个排序，然后慢慢求解即可" class="headerlink" title="那就完了呀，直接按照这个排序，然后慢慢求解即可"></a>那就完了呀，直接按照这个排序，然后慢慢求解即可</h2><h3 id="那么再来讲讲怎么求解："><a href="#那么再来讲讲怎么求解：" class="headerlink" title="那么再来讲讲怎么求解："></a>那么再来讲讲怎么求解：</h3><h3 id="对于牛-x-，赶-x-的损失当然就是-sum-i-x-1-n-D-i-2T-x"><a href="#对于牛-x-，赶-x-的损失当然就是-sum-i-x-1-n-D-i-2T-x" class="headerlink" title="对于牛$x$，赶$x$的损失当然就是$\sum_{i=x+1}^n D[i] 2T[x]$"></a>对于牛$x$，赶$x$的损失当然就是$\sum_{i=x+1}^n D[i] <em>2</em>T[x]$</h3><h2 id="其中-x-1-n-就是还没赶走的牛。为什么呢？因为我们都排完序了，是按-1-n-的顺序赶的"><a href="#其中-x-1-n-就是还没赶走的牛。为什么呢？因为我们都排完序了，是按-1-n-的顺序赶的" class="headerlink" title="其中$x+1~n$就是还没赶走的牛。为什么呢？因为我们都排完序了，是按$1~n$的顺序赶的"></a>其中$x+1~n$就是还没赶走的牛。为什么呢？因为我们都排完序了，是按$1~n$的顺序赶的</h2><h2 id="但是如果每个-x-都枚举-x-1-n-的和，那-O-n-2-肯定会炸啊，-n≤10-5"><a href="#但是如果每个-x-都枚举-x-1-n-的和，那-O-n-2-肯定会炸啊，-n≤10-5" class="headerlink" title="但是如果每个$x$都枚举$x+1~n$的和，那$O(n^2)$肯定会炸啊，$n≤10^5$"></a>但是如果每个$x$都枚举$x+1~n$的和，那$O(n^2)$肯定会炸啊，$n≤10^5$</h2><h3 id="那么我们可以在枚举之前维护一个后缀和-Nxt-i-预处理出-sum-j-i-n-D-i-，在枚举到-x-的时候再直接调用-Nxt-x-1-2T-x-就好了，这样的话时间复杂度就变成了-O-n-2-级别的，肯定是可以跑过去的。"><a href="#那么我们可以在枚举之前维护一个后缀和-Nxt-i-预处理出-sum-j-i-n-D-i-，在枚举到-x-的时候再直接调用-Nxt-x-1-2T-x-就好了，这样的话时间复杂度就变成了-O-n-2-级别的，肯定是可以跑过去的。" class="headerlink" title="那么我们可以在枚举之前维护一个后缀和$Nxt[i]$预处理出$\sum_{j=i}^n D[i]，在枚举到$x$的时候再直接调用$Nxt[x+1]2T[x]$就好了，这样的话时间复杂度就变成了$O(n^2)$级别的，肯定是可以跑过去的。"></a>那么我们可以在枚举之前维护一个后缀和$Nxt[i]$预处理出$\sum_{j=i}^n D[i]，在枚举到$x$的时候再直接调用$Nxt[x+1]<em>2</em>T[x]$就好了，这样的话时间复杂度就变成了$O(n^2)$级别的，肯定是可以跑过去的。</h3><p>说了辣么多，上代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long LL;</span><br><span class="line">const int N=1e5+5;</span><br><span class="line">int n;</span><br><span class="line">LL Answer,Nxt[N];     //Answer存的是答案，Nxt是后缀和 </span><br><span class="line">struct Node&#123;          //用结构体来存牛 </span><br><span class="line">    int Tim,Num;//Tim是时间，Num是吃花效率 </span><br><span class="line">&#125;p[N];</span><br><span class="line">inline int Read()&#123;</span><br><span class="line">    char ch;int f=1,x;</span><br><span class="line">    while((ch=getchar())&lt;&apos;0&apos;||ch&gt;&apos;9&apos;) if(ch==&apos;-&apos;) f=-1;x=ch^48;</span><br><span class="line">    while((ch=getchar())&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;) x=(x&lt;&lt;3)+(x&lt;&lt;1)+(ch^48);</span><br><span class="line">    return x*f;</span><br><span class="line">&#125;</span><br><span class="line">inline bool Cmp(const Node x,const Node y)&#123;    //比较函数，就是刚刚推的辣个 </span><br><span class="line">    return x.Tim*y.Num&lt;x.Num*y.Tim;</span><br><span class="line">&#125;</span><br><span class="line">inline void Init()&#123;</span><br><span class="line">    n=Read();</span><br><span class="line">    for(register int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        p[i].Tim=Read();</span><br><span class="line">        p[i].Num=Read();</span><br><span class="line">    &#125;</span><br><span class="line">    stable_sort(p+1,p+n+1,Cmp);//排序</span><br><span class="line">	//stable_sort是sort的稳定版，但有时不如sort</span><br><span class="line">	//反正和sort差不多，都是O(nlogn)的 </span><br><span class="line">    Nxt[n]=p[n].Num;//后缀和 </span><br><span class="line">    for(register int i=n-1;i;i--)</span><br><span class="line">        Nxt[i]=Nxt[i+1]+1ll*p[i].Num;//预处理出后缀和 </span><br><span class="line">&#125;</span><br><span class="line">inline void Query()&#123;</span><br><span class="line">    for(register int i=1;i&lt;=n;i++)</span><br><span class="line">        Answer+=2ll*p[i].Tim*Nxt[i+1];//直接O(1)求 </span><br><span class="line">    printf(&quot;%lld\n&quot;,Answer);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    Init();</span><br><span class="line">    Query();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>谢谢观看。。。</p>
+<p>emmm这应该是我目前写过最短的题解了。。。。</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
