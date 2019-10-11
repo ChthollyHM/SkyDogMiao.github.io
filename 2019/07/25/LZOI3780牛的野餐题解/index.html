@@ -1,144 +1,338 @@
 <!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.9.0">
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="SkyDogMiao">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="牛的野餐题解">
-  <meta property="og:description" content="天狗成长路上的点点滴滴……">
-  <meta property="og:site_name" content="天狗的博客">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="http://SkyDogMiao.github.io">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-    <link rel="alternate" href="/atom.xml" title="天狗的博客" type="application/atom+xml">
   
-  
-    <link rel="icon" href="[object Object]">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="做题经历,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="3780: 牛的野餐Cow Picnic">
+<meta name="keywords" content="做题经历">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛的野餐题解">
+<meta property="og:url" content="http://SkyDogMiao.github.io/2019/07/25/LZOI3780牛的野餐题解/index.html">
+<meta property="og:site_name" content="天狗的博客">
+<meta property="og:description" content="3780: 牛的野餐Cow Picnic">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-26T12:03:10.907Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="牛的野餐题解">
+<meta name="twitter:description" content="3780: 牛的野餐Cow Picnic">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://SkyDogMiao.github.io/2019/07/25/LZOI3780牛的野餐题解/">
+
+
+
+
+
+  <title>牛的野餐题解 | 天狗的博客</title>
   
 
-  <!-- Site Title -->
-  <title>天狗的博客</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  
-  <link rel="stylesheet" href="/css/style.light.css">
 
-  <!-- Google Analytics -->
-  
+
+
+
+
 
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
+  
+  
+    
+  
 
-<header class="site-header header-background" style="background-image: url(/img/Head.png)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">牛的野餐题解</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/SkyDogMiao">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:953438143@qq.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://winjayran.github.io">
-                  
-                  友链LYJ
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://presucc.github.io">
-                  
-                  友链CR
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天狗的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle">LZHM</p>
+      
   </div>
-</header>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By SkyDogMiao</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2019-07-25</span>
-            <span class="time">09:54:27</span>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tag">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            tag
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyDogMiao.github.io/2019/07/25/LZOI3780牛的野餐题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyDogMiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天狗的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">牛的野餐题解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-25T12:00:00+08:00">
+                2019-07-25
+              </time>
+            
+
+            
+
+            
           </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
 
-<a href="/categories/信息/">信息</a>
-</span>
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/信息/" itemprop="url" rel="index">
+                    <span itemprop="name">信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
+      </header>
+    
 
-<a class="tag" href="/tags/做题经历/">#做题经历</a>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
+      
+      
 
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p>3780: 牛的野餐Cow Picnic</p>
+      
+        <p>3780: 牛的野餐Cow Picnic</p>
 <a id="more"></a>
 <p>时间限制: 1 Sec  内存限制: 128 MB<br>提交: 54  解决: 21<br>[提交][状态][题解]<br>题目描述<br>K(1≤K≤100)只奶牛分散在N(1≤N≤1000)个牧场．现在她们要集中起来进餐．牧场之间有M(1≤M≤10000)条有向路连接，而且不存在起点和终点相同的有向路．她们进餐的地点必须是所有奶牛都可到达的地方．那么，有多少这样的牧场呢？<br>输入<br>第1行：3个整数，K，N，M</p>
 <p>第2行..K+1行：1个整数（取值1..N），表示第i个奶牛所在的牧场编号</p>
@@ -161,58 +355,390 @@
 <h3 id="枚举u的出边：-2"><a href="#枚举u的出边：-2" class="headerlink" title="枚举u的出边："></a>枚举u的出边：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(register int i=Head[u];i!=-1;i=Nxt[i])</span><br><span class="line">	v=Ver[i];          //终点</span><br><span class="line">	Val=Value[i];       //权值</span><br></pre></td></tr></table></figure>
 <h1 id="emmm讲了这么多，这道题-其实是这一大模块的题-就完了"><a href="#emmm讲了这么多，这道题-其实是这一大模块的题-就完了" class="headerlink" title="emmm讲了这么多，这道题(其实是这一大模块的题)就完了"></a>emmm讲了这么多，这道题(其实是这一大模块的题)就完了</h1><h2 id="最后给大家看看AC的DFS代码："><a href="#最后给大家看看AC的DFS代码：" class="headerlink" title="最后给大家看看AC的DFS代码："></a>最后给大家看看AC的DFS代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">const int N=1005;</span><br><span class="line">const int M=10005;</span><br><span class="line">const int K=105;</span><br><span class="line">int n,m,k,Cow[K],Answer;</span><br><span class="line">int Head[N],Nxt[M],Ver[M],cnt;</span><br><span class="line">bool Vis[N];</span><br><span class="line">inline int Read()&#123;</span><br><span class="line">    char ch;int f=1,x;</span><br><span class="line">    while((ch=getchar())&lt;&apos;0&apos;||ch&gt;&apos;9&apos;) if(ch==&apos;-&apos;) f=-1;x=ch^48;</span><br><span class="line">    while((ch=getchar())&gt;=&apos;0&apos;&amp;&amp;ch&lt;=&apos;9&apos;) x=(x&lt;&lt;3)+(x&lt;&lt;1)+(ch^48);</span><br><span class="line">    return x*f;</span><br><span class="line">&#125;</span><br><span class="line">inline void AddEdge(const int x,const int y)&#123;       //邻接表存边 </span><br><span class="line">    Ver[++cnt]=y;</span><br><span class="line">    Nxt[cnt]=Head[x];</span><br><span class="line">    Head[x]=cnt;</span><br><span class="line">&#125;</span><br><span class="line">inline void Dfs(const int u)&#123;</span><br><span class="line">    Vis[u]=1;      //做标记</span><br><span class="line">    //好处有两个：</span><br><span class="line">	//1.储存能否到达点u(就是有没有搜到过u)</span><br><span class="line">	//2.避免重复搜索(如果是环就难受了) </span><br><span class="line">    for(register int i=Head[u];i!=-1;i=Nxt[i])&#123;</span><br><span class="line">        int v=Ver[i];       //往下搜索 </span><br><span class="line">        if(!Vis[v]) Dfs(v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">inline void Init()&#123;</span><br><span class="line">    memset(Head,-1,sizeof(Head));</span><br><span class="line">    k=Read();n=Read();m=Read();</span><br><span class="line">    for(register int i=1;i&lt;=k;i++)</span><br><span class="line">        Cow[i]=Read();</span><br><span class="line">    for(;m;m--)&#123;</span><br><span class="line">        int x=Read();</span><br><span class="line">        int y=Read();</span><br><span class="line">        AddEdge(y,x);      //反向存边</span><br><span class="line">		//这样就把“到达”变成了出发 </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">inline void Query()&#123;</span><br><span class="line">    for(register int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">        memset(Vis,0,sizeof(Vis));</span><br><span class="line">        bool flag=1;Dfs(i);</span><br><span class="line">        for(register int j=1;j&lt;=k;j++)</span><br><span class="line">            if(!Vis[Cow[j]])&#123;       //枚举牛们是否都满足 </span><br><span class="line">                flag=0;</span><br><span class="line">                break ;</span><br><span class="line">            &#125;</span><br><span class="line">        Answer+=flag;      //统计 </span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;,Answer);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    Init();</span><br><span class="line">    Query();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="emmm谢谢看到这里！！"><a href="#emmm谢谢看到这里！！" class="headerlink" title="emmm谢谢看到这里！！"></a>emmm谢谢看到这里！！</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/做题经历/" rel="tag"># 做题经历</a>
+          
         </div>
-      </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/24/LZOI3746渡河题解/" rel="next" title="渡河题解">
+                <i class="fa fa-chevron-left"></i> 渡河题解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/26/LZOI2819战士题解/" rel="prev" title="战士题解">
+                战士题解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
   </div>
-</article>
+
+
+          </div>
+          
+
+
+          
+
+  
 
 
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">SkyDogMiao</p>
+              <p class="site-description motion-element" itemprop="description">天狗成长路上的点点滴滴……</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#同样的，我们先来理解一下题意："><span class="nav-number">1.</span> <span class="nav-text">同样的，我们先来理解一下题意：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其实告诉你一个n个点m条边的有向图，然后在这个有向图中有k个特殊点-可能有两个或以上的特殊点是同一个-，问在n个点中有多少个点是k个特殊点都能到达的"><span class="nav-number">1.1.</span> <span class="nav-text">其实告诉你一个n个点m条边的有向图，然后在这个有向图中有k个特殊点(可能有两个或以上的特殊点是同一个)，问在n个点中有多少个点是k个特殊点都能到达的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这就是一道图论求有向图连通性的模板裸题嘛。"><span class="nav-number">1.2.</span> <span class="nav-text">这就是一道图论求有向图连通性的模板裸题嘛。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能有的小盆友要问了，什么叫求有向图连通性呢？求有向图连通性就是说在一个有向图中给一个数对-x-y-，问x经过一些边后能否跑到y。"><span class="nav-number">1.3.</span> <span class="nav-text">可能有的小盆友要问了，什么叫求有向图连通性呢？求有向图连通性就是说在一个有向图中给一个数对(x,y)，问x经过一些边后能否跑到y。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么有向图连通性怎么求呢？我将在下面给大家介绍两种常用的求有向图连通性的算法-但是只有一个可以解决这道题"><span class="nav-number">1.4.</span> <span class="nav-text">那么有向图连通性怎么求呢？我将在下面给大家介绍两种常用的求有向图连通性的算法(但是只有一个可以解决这道题)</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Floyd"><span class="nav-number"></span> <span class="nav-text">1.Floyd</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有的小盆友学过最短路的可能知道Floyd这个算法，不过就算没学过也没关系，我会给大家详细介绍。"><span class="nav-number">0.1.</span> <span class="nav-text">有的小盆友学过最短路的可能知道Floyd这个算法，不过就算没学过也没关系，我会给大家详细介绍。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Floyd其实是一个神奇的最短路算法，而且可以处理多源，它可以做到O-n-3-预处理出所有-x-y-的最短距离，之后询问直接O-1-就好了"><span class="nav-number">0.2.</span> <span class="nav-text">Floyd其实是一个神奇的最短路算法，而且可以处理多源，它可以做到O(n^3)预处理出所有(x,y)的最短距离，之后询问直接O(1)就好了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么Floyd是怎么实现的呢？"><span class="nav-number">0.3.</span> <span class="nav-text">那么Floyd是怎么实现的呢？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Floyd的思想基于-动态规划"><span class="nav-number">1.</span> <span class="nav-text">Floyd的思想基于     动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Floyd的基础想法是这样的：我们设Dist-k-i-j-表示i经过一系列结点编号不超过k的点到达j的最短距离"><span class="nav-number">1.1.</span> <span class="nav-text">Floyd的基础想法是这样的：我们设Dist[k][i][j]表示i经过一系列结点编号不超过k的点到达j的最短距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么这个状态该怎么转移呢？？"><span class="nav-number">1.2.</span> <span class="nav-text">那么这个状态该怎么转移呢？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们可以这样想，从i走到j，需要先从i走到k，再从k走到j，这一点很好理解"><span class="nav-number">1.3.</span> <span class="nav-text">我们可以这样想，从i走到j，需要先从i走到k，再从k走到j，这一点很好理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么再抽象一点，从i经过一系列结点编号不超过k的点到达j，实际上就是先从i经过一系列结点编号不超过k-1的点到达k，再从k经过一系列结点编号不超过k-1的到达j"><span class="nav-number">2.</span> <span class="nav-text">那么再抽象一点，从i经过一系列结点编号不超过k的点到达j，实际上就是先从i经过一系列结点编号不超过k-1的点到达k，再从k经过一系列结点编号不超过k-1的到达j</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#所以状态转移方程就很明显了"><span class="nav-number">2.1.</span> <span class="nav-text">所以状态转移方程就很明显了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们把上面的式子写下来："><span class="nav-number">2.2.</span> <span class="nav-text">我们把上面的式子写下来：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从i经过一系列结点编号不超过k的点到达j：Dist-k-i-j"><span class="nav-number">2.3.</span> <span class="nav-text">从i经过一系列结点编号不超过k的点到达j：Dist[k][i][j]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从i经过一系列结点编号不超过k-1的点到达k：Dist-k-1-i-k"><span class="nav-number">2.4.</span> <span class="nav-text">从i经过一系列结点编号不超过k-1的点到达k：Dist[k-1][i][k]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从k经过一系列结点编号不超过k-1的点到达j：Dist-k-1-k-j"><span class="nav-number">2.5.</span> <span class="nav-text">从k经过一系列结点编号不超过k-1的点到达j：Dist[k-1][k][j]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么实际上就是距离加起来就好了"><span class="nav-number">3.</span> <span class="nav-text">那么实际上就是距离加起来就好了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#即Dist-k-i-j-min-Dist-k-i-j-Dist-k-1-i-k-Dist-k-1-k-j"><span class="nav-number">4.</span> <span class="nav-text">即Dist[k][i][j]=min(Dist[k][i][j],Dist[k-1][i][k],Dist[k-1][k][j]);</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么1到n的距离就是Dist-n-1-n"><span class="nav-number">5.</span> <span class="nav-text">那么1到n的距离就是Dist[n][1][n]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#给个伪代码："><span class="nav-number">5.1.</span> <span class="nav-text">给个伪代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然而我们发现Dist-k-所需的只有Dist-k-1-，而且不会影响到。"><span class="nav-number">5.2.</span> <span class="nav-text">然而我们发现Dist[k][][]所需的只有Dist[k-1][][]，而且不会影响到。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#而且三维的话空间复杂度O-n-3-，可能不会爆，但也会特别不爽对吧。但因为满足上一行的条件，所以我们不妨去掉第一维，这样的话空间复杂度就降到了O-n-2-，Dist-i-j-就表示i到j最短距离"><span class="nav-number">5.3.</span> <span class="nav-text">而且三维的话空间复杂度O(n^3)，可能不会爆，但也会特别不爽对吧。但因为满足上一行的条件，所以我们不妨去掉第一维，这样的话空间复杂度就降到了O(n^2)，Dist[i][j]就表示i到j最短距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么我们就有了一个标准的Floyd伪代码："><span class="nav-number">5.4.</span> <span class="nav-text">那么我们就有了一个标准的Floyd伪代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emmm？这不是求最短路嘛？和连通性有半毛钱关系嘛？？"><span class="nav-number">5.5.</span> <span class="nav-text">emmm？这不是求最短路嘛？和连通性有半毛钱关系嘛？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当然有了，我们根据Floyd的思想改装一下"><span class="nav-number">5.6.</span> <span class="nav-text">当然有了，我们根据Floyd的思想改装一下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们设一个bool型二维数组Check-i-j-表示i能否到达j"><span class="nav-number">5.7.</span> <span class="nav-text">我们设一个bool型二维数组Check[i][j]表示i能否到达j</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么和Dist的处理不就很像了嘛？？"><span class="nav-number">5.8.</span> <span class="nav-text">那么和Dist的处理不就很像了嘛？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类似的，我们列出状态转移方程"><span class="nav-number">5.9.</span> <span class="nav-text">类似的，我们列出状态转移方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Check-i-j-Check-i-j-Check-i-k-amp-amp-Check-k-j"><span class="nav-number">5.10.</span> <span class="nav-text">Check[i][j]=Check[i][j]||(Check[i][k]&amp;&amp;Check[k][j])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么这道题，我们就有了一个用Floyd的方法："><span class="nav-number">5.11.</span> <span class="nav-text">那么这道题，我们就有了一个用Floyd的方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-直接O-n-3-一波预处理"><span class="nav-number">5.12.</span> <span class="nav-text">1.直接O(n^3)一波预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-枚举1-n，看看是否每个特殊点都能到达，直接调用我们预处理出来的Check即可"><span class="nav-number">5.13.</span> <span class="nav-text">2.枚举1~n，看看是否每个特殊点都能到达，直接调用我们预处理出来的Check即可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度：O-nk"><span class="nav-number">5.14.</span> <span class="nav-text">时间复杂度：O(nk)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所以我们Floyd总的时间复杂度就是O-n-3-，但是n的数据范围是n-lt-1000，所以Floyd是做不了的，会T掉，但是在LZOI上可以骗到到82分的高分"><span class="nav-number">5.15.</span> <span class="nav-text">所以我们Floyd总的时间复杂度就是O(n^3)，但是n的数据范围是n&lt;=1000，所以Floyd是做不了的，会T掉，但是在LZOI上可以骗到到82分的高分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虽然A不了，但还是亮亮82分的代码，大家可以参考骗分："><span class="nav-number">5.16.</span> <span class="nav-text">虽然A不了，但还是亮亮82分的代码，大家可以参考骗分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么我们来讲讲另一种求图的连通性的方法："><span class="nav-number">6.</span> <span class="nav-text">那么我们来讲讲另一种求图的连通性的方法：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-DFS"><span class="nav-number"></span> <span class="nav-text">2.DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可能有的小盆友会感到震惊，怎么会是怎么普通的算法呢？我们来详细讲讲"><span class="nav-number">0.1.</span> <span class="nav-text">可能有的小盆友会感到震惊，怎么会是怎么普通的算法呢？我们来详细讲讲</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们在这道题的大体思路是这样的：首先是枚举1-n，然后判断。"><span class="nav-number">0.2.</span> <span class="nav-text">我们在这道题的大体思路是这样的：首先是枚举1~n，然后判断。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#但是我们该怎么判断所有特殊点是否能到达该点呢？？"><span class="nav-number">0.3.</span> <span class="nav-text">但是我们该怎么判断所有特殊点是否能到达该点呢？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以该点为终点好像有点麻烦，要从每个特殊点都搜一次"><span class="nav-number">0.4.</span> <span class="nav-text">以该点为终点好像有点麻烦，要从每个特殊点都搜一次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么如果让该点作为起点不就好办了吗？？"><span class="nav-number">0.5.</span> <span class="nav-text">那么如果让该点作为起点不就好办了吗？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所以我们在存边的时候反向存，然后不就可以把终点变成起点了吗？？"><span class="nav-number">0.6.</span> <span class="nav-text">所以我们在存边的时候反向存，然后不就可以把终点变成起点了吗？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然后我们就直接从枚举的点出发，看看是否能到达每个特殊点。"><span class="nav-number">0.7.</span> <span class="nav-text">然后我们就直接从枚举的点出发，看看是否能到达每个特殊点。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们还要想想深搜的细节。"><span class="nav-number">0.8.</span> <span class="nav-text">我们还要想想深搜的细节。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们可以定义一个bool型一维数组Vis。Vis-x-表示x是否被走过"><span class="nav-number">0.9.</span> <span class="nav-text">我们可以定义一个bool型一维数组Vis。Vis[x]表示x是否被走过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置这样一个数组有什么好的呢？？"><span class="nav-number">0.10.</span> <span class="nav-text">设置这样一个数组有什么好的呢？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-方便我们统计。跑完DFS后，直接枚举特殊点，看看Vis-特殊点-即可"><span class="nav-number">0.11.</span> <span class="nav-text">1.方便我们统计。跑完DFS后，直接枚举特殊点，看看Vis[特殊点]即可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-避免重复走过一个点，遇到环就尬了"><span class="nav-number">0.12.</span> <span class="nav-text">2.避免重复走过一个点，遇到环就尬了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这样总的时间复杂度为O-n-2-nm-O-nm-假设m-gt-n-的，是刚好可以卡过去的"><span class="nav-number">0.13.</span> <span class="nav-text">这样总的时间复杂度为O(n^2+nm)=O(nm)(假设m&gt;=n)的，是刚好可以卡过去的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给给枚举部分伪代码："><span class="nav-number">0.14.</span> <span class="nav-text">给给枚举部分伪代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深搜部分伪代码："><span class="nav-number">0.15.</span> <span class="nav-text">深搜部分伪代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等等！！你上面说啥？存边？？咋存边？？"><span class="nav-number">1.</span> <span class="nav-text">等等！！你上面说啥？存边？？咋存边？？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哦好吧，那么我再给大家普及一下几种常用的存边方式："><span class="nav-number">1.1.</span> <span class="nav-text">哦好吧，那么我再给大家普及一下几种常用的存边方式：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-邻接矩阵"><span class="nav-number"></span> <span class="nav-text">1.邻接矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#邻接矩阵的思想就是用二维数组存下每个点的所有出边的长度和终点"><span class="nav-number">0.1.</span> <span class="nav-text">邻接矩阵的思想就是用二维数组存下每个点的所有出边的长度和终点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比如我们可以用Ver-i-存i的出边到达的终点"><span class="nav-number">0.2.</span> <span class="nav-text">比如我们可以用Ver[i][]存i的出边到达的终点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用Value-i-存i的出边的长度"><span class="nav-number">0.3.</span> <span class="nav-text">用Value[i][]存i的出边的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用Cnt-i-存i个出边总数"><span class="nav-number">0.4.</span> <span class="nav-text">用Cnt[i] 存i个出边总数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么存边的时候，直接在Ver和Value后-Cnt-i-，存进去就好了"><span class="nav-number">0.5.</span> <span class="nav-text">那么存边的时候，直接在Ver和Value后++Cnt[i]，存进去就好了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给一下伪代码吧："><span class="nav-number">0.6.</span> <span class="nav-text">给一下伪代码吧：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存边："><span class="nav-number">0.7.</span> <span class="nav-text">存边：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举u的出边："><span class="nav-number">0.8.</span> <span class="nav-text">枚举u的出边：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#但是邻接矩阵的空间复杂度是O-n-2-的，我们要考虑更好的方式"><span class="nav-number">1.</span> <span class="nav-text">但是邻接矩阵的空间复杂度是O(n^2)的，我们要考虑更好的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-邻接矩阵的优化——vector"><span class="nav-number"></span> <span class="nav-text">2.邻接矩阵的优化——vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们发现，我们开的数组Ver-N-N-，但是与u的出边肯定没有N条，也就是说Ver-u-肯定没有N大小。这样一来我们就浪费了很多空间。"><span class="nav-number">0.1.</span> <span class="nav-text">我们发现，我们开的数组Ver[N][N]，但是与u的出边肯定没有N条，也就是说Ver[u]肯定没有N大小。这样一来我们就浪费了很多空间。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所以我们不妨用一个动态的数组，等用到一个数值再申请新空间，最大化减小空间"><span class="nav-number">0.2.</span> <span class="nav-text">所以我们不妨用一个动态的数组，等用到一个数值再申请新空间，最大化减小空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#STL就为我们提供了一个动态数组的容器——vector"><span class="nav-number">0.3.</span> <span class="nav-text">STL就为我们提供了一个动态数组的容器——vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们来讲讲vector的原理："><span class="nav-number">0.4.</span> <span class="nav-text">我们来讲讲vector的原理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#是这样的，假设我们的vector已经申请了m的空间，当超过时，我们就将空间申请至2m。"><span class="nav-number">0.5.</span> <span class="nav-text">是这样的，假设我们的vector已经申请了m的空间，当超过时，我们就将空间申请至2m。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同样的，当实际空间≤n-2时，我们就释放掉一半的空间"><span class="nav-number">0.6.</span> <span class="nav-text">同样的，当实际空间≤n/2时，我们就释放掉一半的空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector的几种用法如下："><span class="nav-number">0.7.</span> <span class="nav-text">vector的几种用法如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-定义："><span class="nav-number">0.8.</span> <span class="nav-text">1.定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-随机访问："><span class="nav-number">0.9.</span> <span class="nav-text">2.随机访问：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不过这里要注意，vector的下标是从0开始的"><span class="nav-number">0.10.</span> <span class="nav-text">不过这里要注意，vector的下标是从0开始的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-从末尾插入一个数"><span class="nav-number">0.11.</span> <span class="nav-text">3.从末尾插入一个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-求vector长度"><span class="nav-number">0.12.</span> <span class="nav-text">4.求vector长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需要注意的是，这个函数非常的慢，所以我们最好在外面先用一个变量Len存下来，等需要时调用Len即可"><span class="nav-number">0.13.</span> <span class="nav-text">需要注意的是，这个函数非常的慢，所以我们最好在外面先用一个变量Len存下来，等需要时调用Len即可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所以也很简单了嘛！！"><span class="nav-number">0.14.</span> <span class="nav-text">所以也很简单了嘛！！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给伪代码："><span class="nav-number">0.15.</span> <span class="nav-text">给伪代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存边：-1"><span class="nav-number">0.16.</span> <span class="nav-text">存边：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举u的出边：-1"><span class="nav-number">0.17.</span> <span class="nav-text">枚举u的出边：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#因为是动态数组，所以vector的空间复杂度是O-m-的，但常数很大，依然不是最优选择"><span class="nav-number">0.18.</span> <span class="nav-text">因为是动态数组，所以vector的空间复杂度是O(m)的，但常数很大，依然不是最优选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-邻接表存边"><span class="nav-number"></span> <span class="nav-text">3.邻接表存边</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这个东西很神奇了。它即省空间又省时间，复杂度O-M-，常数又小，是最常用的存边方式。"><span class="nav-number">0.1.</span> <span class="nav-text">这个东西很神奇了。它即省空间又省时间，复杂度O(M)，常数又小，是最常用的存边方式。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际上每个点就都有一个出边集合"><span class="nav-number">0.2.</span> <span class="nav-text">实际上每个点就都有一个出边集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#假设最初是这样的："><span class="nav-number">0.3.</span> <span class="nav-text">假设最初是这样的：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-gt-2-gt-3-表示1有一个到2和到3的边"><span class="nav-number">0.4.</span> <span class="nav-text">1        -&gt;2-&gt;3                //表示1有一个到2和到3的边</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#那么当我们需要再插入的一条从1到4的边的时候，邻接表是这样插入的："><span class="nav-number">0.5.</span> <span class="nav-text">那么当我们需要再插入的一条从1到4的边的时候，邻接表是这样插入的：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接把所有边往后一个，把-1-4-放到最前面"><span class="nav-number">0.6.</span> <span class="nav-text">直接把所有边往后一个，把(1,4)放到最前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#也就是：-1-gt-4-gt-2-gt-3"><span class="nav-number">0.7.</span> <span class="nav-text">也就是： 1            -&gt;4-&gt;2-&gt;3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#但是这样太慢了，而邻接表却很巧妙"><span class="nav-number">0.8.</span> <span class="nav-text">但是这样太慢了，而邻接表却很巧妙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我这样也讲不清楚，直接讲代码"><span class="nav-number">0.9.</span> <span class="nav-text">我这样也讲不清楚，直接讲代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用Head-x-表示x最后插入的出边的编号"><span class="nav-number">0.10.</span> <span class="nav-text">用Head[x]表示x最后插入的出边的编号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nxt-x-表示枚举完第x条边下一个要枚举的边"><span class="nav-number">0.11.</span> <span class="nav-text">Nxt[x]表示枚举完第x条边下一个要枚举的边</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ver-x-表示第x条边终点"><span class="nav-number">0.12.</span> <span class="nav-text">Ver[x]表示第x条边终点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Value-x-表示第x条边的权值"><span class="nav-number">0.13.</span> <span class="nav-text">Value[x]表示第x条边的权值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们还需要一个计数器cnt表示边的编号"><span class="nav-number">0.14.</span> <span class="nav-text">我们还需要一个计数器cnt表示边的编号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接上代码吧："><span class="nav-number">0.15.</span> <span class="nav-text">直接上代码吧：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存边：-2"><span class="nav-number">0.16.</span> <span class="nav-text">存边：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举u的出边：-2"><span class="nav-number">0.17.</span> <span class="nav-text">枚举u的出边：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#emmm讲了这么多，这道题-其实是这一大模块的题-就完了"><span class="nav-number"></span> <span class="nav-text">emmm讲了这么多，这道题(其实是这一大模块的题)就完了</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最后给大家看看AC的DFS代码："><span class="nav-number">1.</span> <span class="nav-text">最后给大家看看AC的DFS代码：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#emmm谢谢看到这里！！"><span class="nav-number"></span> <span class="nav-text">emmm谢谢看到这里！！</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SkyDogMiao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
-

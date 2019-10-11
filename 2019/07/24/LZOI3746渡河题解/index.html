@@ -1,144 +1,338 @@
 <!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.9.0">
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="SkyDogMiao">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="渡河题解">
-  <meta property="og:description" content="天狗成长路上的点点滴滴……">
-  <meta property="og:site_name" content="天狗的博客">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="http://SkyDogMiao.github.io">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-    <link rel="alternate" href="/atom.xml" title="天狗的博客" type="application/atom+xml">
   
-  
-    <link rel="icon" href="[object Object]">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="做题经历,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="题目：3746: 渡河">
+<meta name="keywords" content="做题经历">
+<meta property="og:type" content="article">
+<meta property="og:title" content="渡河题解">
+<meta property="og:url" content="http://SkyDogMiao.github.io/2019/07/24/LZOI3746渡河题解/index.html">
+<meta property="og:site_name" content="天狗的博客">
+<meta property="og:description" content="题目：3746: 渡河">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-26T12:03:22.262Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="渡河题解">
+<meta name="twitter:description" content="题目：3746: 渡河">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://SkyDogMiao.github.io/2019/07/24/LZOI3746渡河题解/">
+
+
+
+
+
+  <title>渡河题解 | 天狗的博客</title>
   
 
-  <!-- Site Title -->
-  <title>天狗的博客</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  
-  <link rel="stylesheet" href="/css/style.light.css">
 
-  <!-- Google Analytics -->
-  
+
+
+
+
 
 </head>
 
-  <body>
-    <!-- Page Header -->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
+  
+  
+    
+  
 
-<header class="site-header header-background" style="background-image: url(/img/Head.png)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">渡河题解</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/SkyDogMiao">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:953438143@qq.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://winjayran.github.io">
-                  
-                  友链LYJ
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://presucc.github.io">
-                  
-                  友链CR
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天狗的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle">LZHM</p>
+      
   </div>
-</header>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By SkyDogMiao</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2019-07-24</span>
-            <span class="time">09:54:27</span>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tag">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            tag
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyDogMiao.github.io/2019/07/24/LZOI3746渡河题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyDogMiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天狗的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">渡河题解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-24T12:00:00+08:00">
+                2019-07-24
+              </time>
+            
+
+            
+
+            
           </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
 
-<a href="/categories/信息/">信息</a>
-</span>
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/信息/" itemprop="url" rel="index">
+                    <span itemprop="name">信息</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
+      </header>
+    
 
-<a class="tag" href="/tags/做题经历/">#做题经历</a>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
+      
+      
 
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p>题目：<br>3746: 渡河</p>
+      
+        <p>题目：<br>3746: 渡河</p>
 <a id="more"></a>
 <p>时间限制: 1 Sec  内存限制: 128 MB<br>提交: 74  解决: 31<br>[提交][状态][题解]<br>题目描述<br>约翰以及他的N(1 &lt;= N &lt;= 2,500)头奶牛打算过一条河，但他们所有的渡河工具，仅仅是一个木筏。 由于奶牛不会划船，在整个渡河过程中，约翰必须始终在木筏上。在这个基础上，木筏上的奶牛数目每增加1，约翰把木筏划到对岸就得花更多的时间。 当约翰一个人坐在木筏上，他把木筏划到对岸需要M(1 &lt;= M &lt;= 1000)分钟。当木筏搭载的奶牛数目从i-1增加到i时，约翰得多花M_i(1 &lt;= M_i &lt;= 1000)分钟才能把木筏划过河（也就是说，船上有1头奶牛时，约翰得花M+M_1分钟渡河；船上有2头奶牛时，时间就变成M+M_1+M_2分钟。后面的依此类推）。那么，约翰最少要花多少时间，才能把所有奶牛带到对岸呢？当然，这个时间得包括约翰一个人把木筏从对岸划回来接下一批的奶牛的时间。</p>
 <p>输入<br>第1行: 两个整数: N和M</p>
@@ -154,58 +348,390 @@
 <p>有问题的话欢迎提出！</p>
 <h1 id="每一个代码都要自己敲，请勿轻易复制粘贴题解的已有代码"><a href="#每一个代码都要自己敲，请勿轻易复制粘贴题解的已有代码" class="headerlink" title="每一个代码都要自己敲，请勿轻易复制粘贴题解的已有代码"></a>每一个代码都要自己敲，请勿轻易复制粘贴题解的已有代码</h1><p>thanks！</p>
 
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/做题经历/" rel="tag"># 做题经历</a>
+          
         </div>
-      </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/18/纪念我初一的OI之路/" rel="next" title="纪念我初一一年的OI之路">
+                <i class="fa fa-chevron-left"></i> 纪念我初一一年的OI之路
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/25/LZOI3780牛的野餐题解/" rel="prev" title="牛的野餐题解">
+                牛的野餐题解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
   </div>
-</article>
+
+
+          </div>
+          
+
+
+          
+
+  
 
 
 
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        <p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">SkyDogMiao</p>
+              <p class="site-description motion-element" itemprop="description">天狗成长路上的点点滴滴……</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我们先来理解一下这道题的意思："><span class="nav-number">1.</span> <span class="nav-text">我们先来理解一下这道题的意思：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#就是说我们要将n头牛渡到河，无非就是我们先渡其中几头过去，再回来，再渡几头过去"><span class="nav-number">1.1.</span> <span class="nav-text">就是说我们要将n头牛渡到河，无非就是我们先渡其中几头过去，再回来，再渡几头过去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带着个空船走一波的时间为M，渡i头牛比渡i-1头牛要多花的时间是M-i"><span class="nav-number">1.2.</span> <span class="nav-text">带着个空船走一波的时间为M，渡i头牛比渡i-1头牛要多花的时间是M_i</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然后我们可以求出渡i头牛的时间"><span class="nav-number">1.3.</span> <span class="nav-text">然后我们可以求出渡i头牛的时间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Num-i-M-M-1-M-2-……-M-i"><span class="nav-number">2.</span> <span class="nav-text">Num_i=M+M_1+M_2+……+M_i</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#上面这个式子应该没什么问题，用这个式子求出来的自然就是渡i头牛的时间。"><span class="nav-number">2.0.1.</span> <span class="nav-text">上面这个式子应该没什么问题，用这个式子求出来的自然就是渡i头牛的时间。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们现在要求至少花多少时间才能把所有牛渡到河对岸。"><span class="nav-number">2.1.</span> <span class="nav-text">我们现在要求至少花多少时间才能把所有牛渡到河对岸。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#那么我们针对性地考虑一下方法的选择（虽然我做题时一眼看出正解）"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">那么我们针对性地考虑一下方法的选择（虽然我做题时一眼看出正解）</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#1-贪心。"><span class="nav-number"></span> <span class="nav-text">1.贪心。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#它说求最少，那我们不妨考虑一下贪心。"><span class="nav-number">1.</span> <span class="nav-text">它说求最少，那我们不妨考虑一下贪心。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一种思路是考虑花Num-i时间渡i头牛的性价比，这样好像是能够让每一分每一秒“最值得”，貌似是没有错的。那么我们来尝试一下如何hack这个方法"><span class="nav-number">1.0.1.</span> <span class="nav-text">一种思路是考虑花Num_i时间渡i头牛的性价比，这样好像是能够让每一分每一秒“最值得”，貌似是没有错的。那么我们来尝试一下如何hack这个方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#假设n为ak-b，然后在1-n中，Num-k与k的性价比是最高的，那么我们的想法大概就是a次渡k头牛，然后再花最少的时间渡b头牛（假设我们已经求出来了），也就是k-k-k……-k-k-b，但是我们可能会有一个更优的方法，比如：k-k-k……k-b"><span class="nav-number">1.0.2.</span> <span class="nav-text">假设n为ak+b，然后在1~n中，Num_k与k的性价比是最高的，那么我们的想法大概就是a次渡k头牛，然后再花最少的时间渡b头牛（假设我们已经求出来了），也就是k,k,k……,k,k,b，但是我们可能会有一个更优的方法，比如：k,k,k……k+b</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这种情况就是k很值，但是b大得一匹。"><span class="nav-number">1.1.</span> <span class="nav-text">这种情况就是k很值，但是b大得一匹。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#所以这种贪心的正确性是不保证的，但是同学们可以尝试用这个方法骗很多（少）分（我也不知道能骗多少分）"><span class="nav-number"></span> <span class="nav-text">所以这种贪心的正确性是不保证的，但是同学们可以尝试用这个方法骗很多（少）分（我也不知道能骗多少分）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#然后我（们）就想不出别的贪心方法了（如果有同学能想出来可以尝试一下，但应该都会被hack）"><span class="nav-number">0.1.</span> <span class="nav-text">然后我（们）就想不出别的贪心方法了（如果有同学能想出来可以尝试一下，但应该都会被hack）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我们考虑其他能保证正确性的方法。"><span class="nav-number"></span> <span class="nav-text">我们考虑其他能保证正确性的方法。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-DFS"><span class="nav-number"></span> <span class="nav-text">2.DFS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有一种方法是绝对正确的，那就是爆搜！！"><span class="nav-number"></span> <span class="nav-text">有一种方法是绝对正确的，那就是爆搜！！</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实际上就是所有把n拆成一堆正整数相加的所有情况中的最优情况。"><span class="nav-number">1.</span> <span class="nav-text">实际上就是所有把n拆成一堆正整数相加的所有情况中的最优情况。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这个方法就是枚举了所有的情况，百分百正确，但是时间复杂度非常恶劣。"><span class="nav-number">1.0.1.</span> <span class="nav-text">这个方法就是枚举了所有的情况，百分百正确，但是时间复杂度非常恶劣。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间复杂度的计算："><span class="nav-number"></span> <span class="nav-text">时间复杂度的计算：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#每次深搜就是枚举小于目前剩余的n，选最多n次，最坏的情况就是全部都选1，将n分成n份，所以最坏的时间复杂度为O-n-，O-2500-明显会爆，可能电脑都爆炸了。"><span class="nav-number">1.</span> <span class="nav-text">每次深搜就是枚举小于目前剩余的n，选最多n次，最坏的情况就是全部都选1，将n分成n份，所以最坏的时间复杂度为O(n!)，O(2500!)明显会爆，可能电脑都爆炸了。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DFS是会T掉的，但是它是保证正确的，所以我们不能就此放弃，要考虑对其的优化。"><span class="nav-number"></span> <span class="nav-text">DFS是会T掉的，但是它是保证正确的，所以我们不能就此放弃，要考虑对其的优化。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#那么我们DFS实际上就是把n拆分成了x1-x2-x3-……-xk-k-x-lt-n"><span class="nav-number">0.1.</span> <span class="nav-text">那么我们DFS实际上就是把n拆分成了x1+x2+x3+……+xk(k,x&lt;=n)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共k个数"><span class="nav-number">0.2.</span> <span class="nav-text">共k个数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后我们把前面的x1-x2-x3-……-xk-1加起来，用一个s表示"><span class="nav-number">1.</span> <span class="nav-text">然后我们把前面的x1+x2+x3+……+xk-1加起来，用一个s表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么n-s-xk"><span class="nav-number">2.</span> <span class="nav-text">那么n=s+xk</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这不就是类似一个状态的转移吗？"><span class="nav-number"></span> <span class="nav-text">这不就是类似一个状态的转移吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#既然有了这一状态的转移，那我们不妨尝试一下DP"><span class="nav-number"></span> <span class="nav-text">既然有了这一状态的转移，那我们不妨尝试一下DP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#老规矩，做DP，问什么设什么，我们设fi表示将i头牛渡过河的最少时间"><span class="nav-number"></span> <span class="nav-text">老规矩，做DP，问什么设什么，我们设fi表示将i头牛渡过河的最少时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#那么fn就可以由fs和Num-xk转移过来了，而s也可以在n之前由ss和Num-xk-1转移过来"><span class="nav-number"></span> <span class="nav-text">那么fn就可以由fs和Num_xk转移过来了，而s也可以在n之前由ss和Num_xk-1转移过来</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#所以我们就继续往下想"><span class="nav-number">0.0.1.</span> <span class="nav-text">所以我们就继续往下想</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态如何转移？"><span class="nav-number">1.</span> <span class="nav-text">状态如何转移？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#假设目前要求fi，那该怎么求呢？"><span class="nav-number"></span> <span class="nav-text">假设目前要求fi，那该怎么求呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先我们枚举fj-j-lt-i-，方便转移fi"><span class="nav-number">1.</span> <span class="nav-text">首先我们枚举fj(j&lt;i)，方便转移fi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么i头牛的最短时间就是j头牛的最短时间加上渡i-j的时间，也就是Num-i-j"><span class="nav-number">2.</span> <span class="nav-text">那么i头牛的最短时间就是j头牛的最短时间加上渡i-j的时间，也就是Num_i-j</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还要注意中间要渡回来，而将n头牛运完后又不用回来了"><span class="nav-number">3.</span> <span class="nav-text">还要注意中间要渡回来，而将n头牛运完后又不用回来了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么fi具体表示的应该就是将i头牛运到河对岸，并且船还在对岸的最短时间"><span class="nav-number">4.</span> <span class="nav-text">那么fi具体表示的应该就是将i头牛运到河对岸，并且船还在对岸的最短时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特别地，f0表示的是一头牛都没有运的情况，那么船应该在原地"><span class="nav-number">5.</span> <span class="nav-text">特别地，f0表示的是一头牛都没有运的情况，那么船应该在原地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么我们在转移的时候要特判一下j是否等于0-如果不等于0，那么说明船还在对岸，就要先开回来，也就是加上M，然后同样地转移"><span class="nav-number">6.</span> <span class="nav-text">那么我们在转移的时候要特判一下j是否等于0,如果不等于0，那么说明船还在对岸，就要先开回来，也就是加上M，然后同样地转移</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间复杂度计算："><span class="nav-number"></span> <span class="nav-text">时间复杂度计算：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举i要O-n-，枚举j要O-n-，所以总复杂度为O-n-2"><span class="nav-number"></span> <span class="nav-text">枚举i要O(n)，枚举j要O(n)，所以总复杂度为O(n^2)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每一个代码都要自己敲，请勿轻易复制粘贴题解的已有代码"><span class="nav-number"></span> <span class="nav-text">每一个代码都要自己敲，请勿轻易复制粘贴题解的已有代码</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
 
 
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SkyDogMiao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
-
